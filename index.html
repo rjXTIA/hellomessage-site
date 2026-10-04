@@ -3,45 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hell'o Message — private messaging</title>
+<title>Hell'o Message — features, calls, updates &amp; download</title>
 <style>
-  :root{--accent:#008069;--ink:#0f172a}
+  :root{--accent:#008069;--accent2:#00a884;--ink:#0f172a;--muted:#5b6472;--line:#e6e9f0;--bg:#f6f8fb}
   *{box-sizing:border-box}
-  body{margin:0;font:16px/1.6 -apple-system,Roboto,'Segoe UI',system-ui,Arial,sans-serif;color:var(--ink);background:#f6f8fb}
-  .hero{background:linear-gradient(135deg,#008069,#005c4b);color:#fff;padding:60px 20px 68px;text-align:center}
-  .hero .logo{font-size:3rem}
-  .hero h1{margin:10px 0 6px;font-size:2rem}
-  .hero p{margin:0;opacity:.94}
-  .wrap{max-width:760px;margin:-34px auto 60px;padding:0 20px}
-  .card{background:#fff;border-radius:16px;padding:26px;box-shadow:0 10px 30px rgba(15,23,42,.08)}
-  ul{padding-left:22px}
-  li{margin:7px 0}
-  .btn{display:inline-block;margin-top:18px;background:var(--accent);color:#fff;text-decoration:none;padding:13px 22px;border-radius:11px;font-weight:800}
-  .btn.ghost{background:#eef2f7;color:var(--ink);margin-left:10px}
-  footer{text-align:center;color:#5b6472;font-size:.85rem;padding:0 20px 40px}
+  body{margin:0;font:16px/1.65 -apple-system,Roboto,'Segoe UI',system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  a{color:var(--accent)}
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .in{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  nav .brand{font-weight:800;color:var(--accent);margin-right:auto}
+  nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.92rem}
+  nav a:hover{color:var(--accent)}
+  .hero{background:linear-gradient(135deg,#008069,#005c4b);color:#fff;padding:64px 20px 78px;text-align:center}
+  .hero .logo{font-size:3.2rem}
+  .hero h1{margin:12px 0 8px;font-size:2.2rem;letter-spacing:-.5px}
+  .hero p{margin:0 auto;max-width:620px;opacity:.95}
+  .hero .cta{margin-top:24px}
+  .btn{display:inline-block;background:#fff;color:#005c4b;text-decoration:none;padding:14px 26px;border-radius:12px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .btn.ghost{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;margin-left:10px}
+  .wrap{max-width:1000px;margin:-40px auto 60px;padding:0 20px}
+  .card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 12px 34px rgba(15,23,42,.09)}
+  h2{font-size:1.45rem;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .f{background:#fbfcfe;border:1px solid var(--line);border-radius:14px;padding:18px}
+  .f .ic{font-size:1.6rem}
+  .f h3{margin:10px 0 6px;font-size:1.02rem}
+  .f p{margin:0;color:var(--muted);font-size:.9rem}
+  .callout{background:linear-gradient(135deg,#ecfdf5,#f0fdfa);border:1px solid #c9efe4;border-radius:16px;padding:24px;margin:26px 0}
+  .callout h3{margin:0 0 8px}
+  section.block{margin-top:26px}
+  .time{list-style:none;margin:0;padding:0}
+  .time li{position:relative;padding:0 0 20px 26px;border-left:2px solid var(--line);margin-left:6px}
+  .time li:last-child{border-left-color:transparent;padding-bottom:0}
+  .time li:before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent2)}
+  .time b{display:block}
+  .time span{color:var(--muted);font-size:.9rem}
+  .dl{text-align:center;padding:6px 0 2px}
+  .dl .btn{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(0,128,105,.28)}
+  .dl small{display:block;color:var(--muted);margin-top:12px}
+  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:10px 20px 50px}
+  footer a{color:var(--muted)}
+  .pill{display:inline-block;background:#e9f7f2;color:#005c4b;border-radius:20px;padding:4px 12px;font-size:.78rem;font-weight:800;margin-bottom:10px}
 </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="logo">&#128172;</div>
-    <h1>Hell'o Message</h1>
-    <p>Secure, real-time messaging — for Android.</p>
+
+<nav>
+  <div class="in">
+    <span class="brand">Hell'o Message</span>
+    <a href="#features">Features</a>
+    <a href="#calls">Calls</a>
+    <a href="#updates">Updates</a>
+    <a href="#download">Download</a>
+    <a href="legal.html">Terms &amp; Privacy</a>
   </div>
-  <div class="wrap">
-    <div class="card">
-      <h2>What it does</h2>
-      <ul>
-        <li>Real-time one-to-one chat, with seen ticks and live typing</li>
-        <li>Voice and video calls</li>
-        <li>Moments — 24-hour photo and text updates</li>
-        <li>Circles — group chats</li>
-        <li>Profile photos, chat themes, and 11 app languages</li>
-        <li>Sign in with email or with Google</li>
+</nav>
+
+<div class="hero">
+  <div class="logo">&#128172;</div>
+  <h1>Hell'o Message</h1>
+  <p>Private messaging for Android — chat, voice and video calls, 24-hour Moments, group Circles and much more. Your messages are readable only by you and the people you talk to.</p>
+  <div class="cta">
+    <a class="btn" href="#download">Download the app</a>
+    <a class="btn ghost" href="legal.html">Terms &amp; Privacy</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="card">
+
+    <section class="block" id="features">
+      <span class="pill">Everything it does</span>
+      <h2>Features</h2>
+      <p class="sub">All of it under our own names and design — nothing borrowed.</p>
+      <div class="grid">
+        <div class="f"><div class="ic">&#128172;</div><h3>Real-time chat</h3><p>Messages arrive instantly, with Seen ticks, live typing and who is online right now.</p></div>
+        <div class="f"><div class="ic">&#128222;</div><h3>Voice calls</h3><p>Call any contact straight from the chat. Mute and end from the call screen.</p></div>
+        <div class="f"><div class="ic">&#128249;</div><h3>Video calls</h3><p>See each other while you talk, with a small self-view and a camera on-off switch.</p></div>
+        <div class="f"><div class="ic">&#9200;</div><h3>Moments</h3><p>Post a photo or a text update that disappears by itself after 24 hours.</p></div>
+        <div class="f"><div class="ic">&#128101;</div><h3>Circles</h3><p>Group chats for your people — give the circle a name, add members, talk together.</p></div>
+        <div class="f"><div class="ic">&#128100;</div><h3>Your profile</h3><p>A name, an About line, a username and a profile photo that others see.</p></div>
+        <div class="f"><div class="ic">&#127912;</div><h3>Chat themes</h3><p>Change the wallpaper behind your chats with a tap.</p></div>
+        <div class="f"><div class="ic">&#127760;</div><h3>11 languages</h3><p>English, Hindi, Marathi, Tamil, Telugu, Bengali, Gujarati, Kannada, Malayalam, Punjabi and Urdu.</p></div>
+        <div class="f"><div class="ic">&#128269;</div><h3>Search &amp; filters</h3><p>Find a chat by name, and filter to Unread or Favourites.</p></div>
+        <div class="f"><div class="ic">&#128101;</div><h3>Invite a friend</h3><p>Share a link; whoever opens it can download the app and join you.</p></div>
+        <div class="f"><div class="ic">&#128274;</div><h3>Private by design</h3><p>Passwords kept only as a salted hash. Database rules mean you can only ever read your own chats.</p></div>
+        <div class="f"><div class="ic">&#9889;</div><h3>Instant sending</h3><p>Your message appears the moment you send it, with no waiting for the network.</p></div>
+      </div>
+    </section>
+
+    <section class="callout" id="calls">
+      <h3>&#128222; &nbsp;Calls and video calls</h3>
+      <p style="margin:0;color:#334155">Open any chat and you will see two buttons at the top right — a phone for a voice call and a camera for a video call. The person you are calling gets a ringing screen with Accept and Decline. Once they accept, you are connected, with mute, camera on-off and end-call controls. Calls go directly between the two phones using WebRTC, and Supabase only carries the introduction that lets the two phones find each other.</p>
+    </section>
+
+    <section class="block" id="updates">
+      <span class="pill">What's new</span>
+      <h2>Updates</h2>
+      <p class="sub">Every build, newest first.</p>
+      <ul class="time">
+        <li><b>Version 1.6 — the website and invite links</b><span>This website, the invite / join page, the Terms &amp; Privacy page, and the app download — all from one address. The app's invite link now opens the join page and names who invited you.</span></li>
+        <li><b>Version 1.5 — invite links</b><span>The Invite a friend screen, generating a shareable link.</span></li>
+        <li><b>Version 1.4 — live calls and instant sending</b><span>Voice and video calls, plus messages that appear the moment you send them.</span></li>
+        <li><b>Version 1.3 — profile setup and Circles</b><span>First-time setup asking for a name and a photo (saved once and remembered), and group chats.</span></li>
+        <li><b>Version 1.2 — Moments, settings and the brand header</b><span>24-hour Moments, the full Settings area, chat themes, the language picker, profile photos, and the app's own name in the top bar.</span></li>
+        <li><b>Version 1.1 — Google sign-in</b><span>Sign in with Google, alongside email and password.</span></li>
+        <li><b>Version 1.0 — the first release</b><span>Email sign-up, real-time one-to-one chat, seen ticks, presence, typing and user search.</span></li>
       </ul>
-      <a class="btn" href="HelloMessage.apk">Download the app</a>
-      <a class="btn ghost" href="legal.html">Terms &amp; Privacy</a>
-    </div>
+    </section>
+
+    <section class="block" id="download">
+      <span class="pill">Get the app</span>
+      <h2>Download</h2>
+      <p class="sub">Android. Works on phones running Android 7 and above.</p>
+      <div class="dl">
+        <a class="btn" href="HelloMessage.apk" download>Download Hell'o Message</a>
+        <small>After downloading, open the file and allow installing from this source when Android asks. Then sign up with your email or with Google.</small>
+      </div>
+    </section>
+
   </div>
-  <footer>&copy; 2026 Hell'o Message. All rights reserved.</footer>
+</div>
+
+<footer>
+  &copy; 2026 Hell'o Message. All rights reserved. &nbsp;·&nbsp;
+  <a href="legal.html">Terms of Service &amp; Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="join.html">Join</a>
+</footer>
+
 </body>
 </html>
