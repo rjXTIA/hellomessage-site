@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're invited to Hell'o Message</title>
+<style>
+  :root{--accent:#008069;--ink:#0f172a}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 -apple-system,Roboto,'Segoe UI',system-ui,Arial,sans-serif;color:var(--ink);background:#f6f8fb}
+  .hero{background:linear-gradient(135deg,#008069,#005c4b);color:#fff;padding:56px 20px 64px;text-align:center}
+  .hero .logo{font-size:3rem}
+  .hero h1{margin:10px 0 4px;font-size:1.7rem}
+  .hero p{margin:0;opacity:.94}
+  .wrap{max-width:620px;margin:-34px auto 60px;padding:0 20px}
+  .card{background:#fff;border-radius:16px;padding:26px;box-shadow:0 10px 30px rgba(15,23,42,.08);text-align:center}
+  .btn{display:inline-block;margin-top:18px;background:var(--accent);color:#fff;text-decoration:none;padding:14px 24px;border-radius:11px;font-weight:800;font-size:1.02rem}
+  .steps{text-align:left;margin:22px 0 0;padding-left:22px;color:#334155}
+  .steps li{margin:9px 0}
+  .note{color:#5b6472;font-size:.85rem;margin-top:18px}
+  a.small{color:var(--accent)}
+  footer{text-align:center;color:#5b6472;font-size:.85rem;padding:0 20px 40px}
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="logo">&#128172;</div>
+    <h1>You're invited</h1>
+    <p id="invitedBy">to join Hell'o Message</p>
+  </div>
+  <div class="wrap">
+    <div class="card">
+      <h2>Install Hell'o Message</h2>
+      <p class="note" style="margin-top:0">A private messaging app — chat, call and share Moments with the people you choose.</p>
+      <a class="btn" href="HelloMessage.apk" download>Download the app</a>
+      <ol class="steps">
+        <li>Tap <strong>Download the app</strong> above.</li>
+        <li>Open the downloaded file. Android will ask you to allow installing from this source — allow it.</li>
+        <li>Install, open the app, and sign up with your email or with Google.</li>
+        <li>Search for your friend's name and start chatting.</li>
+      </ol>
+      <p class="note">By installing, you agree to our <a class="small" href="legal.html">Terms of Service &amp; Privacy Policy</a>.</p>
+    </div>
+  </div>
+  <footer>&copy; 2026 Hell'o Message. All rights reserved.</footer>
+  <script>
+    (function(){
+      try{
+        var p = new URLSearchParams(location.search);
+        var n = p.get('name');
+        if(n){ document.getElementById('invitedBy').textContent = decodeURIComponent(n).replace(/\+/g,' ') + " invited you to Hell'o Message"; }
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
